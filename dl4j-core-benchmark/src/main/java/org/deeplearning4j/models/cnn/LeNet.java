@@ -25,7 +25,7 @@ import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 public class LeNet implements TestableModel {
 
-    private int[] inputShape = new int[]{3,224,224};
+    private int[] inputShape = new int[]{1,28,28};
     private int numLabels;
     private long seed;
     private int iterations;
@@ -50,8 +50,8 @@ public class LeNet implements TestableModel {
                 .cacheMode(cacheMode)
                 .seed(seed)
                 .activation(Activation.IDENTITY)
-//                .weightInit(WeightInit.XAVIER)
-                .weightInit(WeightInit.DISTRIBUTION)
+                .weightInit(WeightInit.XAVIER)
+//                .weightInit(WeightInit.DISTRIBUTION)
                 //.learningRateDecayPolicy(LearningRatePolicy.Inverse).lrPolicyDecayRate(0.001).lrPolicyPower(0.75)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .l2(5e-4)

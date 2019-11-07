@@ -76,6 +76,7 @@ public class BenchmarkMlpRnn extends BaseBenchmark {
         switch(modelType){
             case MLP_SMALL:
             case RNN_SMALL:
+            case RNN:
                 break;
             default:
                 throw new UnsupportedOperationException("Image benchmarks are applicable to CNN models only.");
