@@ -50,9 +50,6 @@ public class ModelSelector {
             case MLP_SMALL:
                 netmap.put(ModelType.MLP_SMALL, new MLP(inputShape[0], new int[]{512,512,512},numLabels, seed, updater, workspaceMode, cacheMode));
                 break;
-            case RESNET50:
-                netmap.put(ModelType.RESNET50, new ResNet50(numLabels, seed, iterations, workspaceMode, cacheMode, updater));
-                break;
             case RESNET50PRE:
                 netmap.put(ModelType.RESNET50PRE, new ResNet50Pretrained(workspaceMode, cacheMode, updater));
                 break;
@@ -63,6 +60,7 @@ public class ModelSelector {
                 break;
             default:
 //                // do nothing
+                throw new RuntimeException("Unknown model: " + modelType);
         }
 
         if(netmap.size()==0) throw new ParameterException("Zero models have been selected for benchmarking.");
