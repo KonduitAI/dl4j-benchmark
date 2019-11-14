@@ -1,3 +1,5 @@
+# THIS REPO HAS BEEN ARCHIVED - USE BENCHMARKS IN https://github.com/KonduitAI/dl4j-dev-tools
+
 # Deeplearning4j Benchmarks
 
 Benchmarks popular models and configurations on Deeplearning4j, and output performance and versioning statistics.
